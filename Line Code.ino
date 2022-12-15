@@ -95,7 +95,7 @@ void loop() {
   //reverseFlow(LINE2, LINE2.Color(127, 200, 0), 50, 3);
 }
 
-void longFlow(uint32_t c, uint8_t wait, uint16_t boop) {
+void longFlow(uint32_t c, uint8_t wait, uint16_t boop) { // Specifically only for the main long line
   // Set start points
   uint16_t sml_start = 36;
   uint16_t med_start = 37;
@@ -134,18 +134,18 @@ void longFlow(uint32_t c, uint8_t wait, uint16_t boop) {
   }
 }
 
-void forwardFlow(Adafruit_NeoPixel line, uint32_t c, uint8_t wait, uint16_t boop) {
+void forwardFlow(Adafruit_NeoPixel line, uint32_t c, uint8_t wait, uint16_t boop) { // Stops after being triggered once, probably useful for interrupts
   uint16_t numPixels = line.numPixels();
   uint16_t line_boop;
 
-  for(uint16_t i=0; i<= numPixels; i++) {
+  for(uint16_t i=0; i<= numPixels; i++) { // Instead of working like this, ask it to trigger every line instead of having to specify, useful on LINE1, LINE4, and LINE7
     line.setPixelColor(i, c);
     line_boop = i-boop;
     line.setPixelColor(line_boop, line.Color(0, 0, 0));
     line.show();
     delay(wait);
   }
-  for (uint16_t j = 0; j<=boop; j++) {
+  for (uint16_t j = 0; j<=boop; j++) { // Clears boop
     line.setPixelColor(line_boop, line.Color(0, 0, 0));
     line_boop++;
     line.show();
