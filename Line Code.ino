@@ -1,18 +1,18 @@
 #include <Adafruit_NeoPixel.h>
 
 // Setting Pins
-#define LONGPIN 23
-#define LINEA 25
-#define LINEB 27
-#define LINEC 29
-#define LINED 31
-#define LINEE 33
-#define LINEF 35
-#define LINEG 37
-#define LINEH 39
-#define LINEI 41
-#define LINEJ 43
-#define TITLE 45
+#define LONGPIN 27
+#define LINEA 28
+#define LINEB 31
+#define LINEC 32
+#define LINED 35
+#define LINEE 36
+#define LINEF 39
+#define LINEG 40
+#define LINEH 43
+#define LINEI 44
+#define LINEJ 47
+#define TITLE 48
 
 // Setting Lines
 // #LEDs, pin, Color(don't change)
